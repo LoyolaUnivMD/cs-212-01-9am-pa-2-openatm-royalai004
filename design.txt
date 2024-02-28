@@ -1,0 +1,23 @@
+Account Class:
+double [] transactions: An array that keeps track of the last five transactions
+String name: Holds the name inputted by the user
+String accountNum: Holds the account number inputted by the user
+double initial_balance: Holds the initial money balance of the user
+double balance: Holds the updated money balance of the user
+
+Constructor:
+  Holds the properties that will be used to operate a user's account
+  Parameters: double [] transactions, String name, String accountNum, double inital_balance, double balance
+double balance():
+  Return balance 
+  Parameters: balance and initial balance
+double withdraw():
+  Return balance
+  Parameters: balance and initial balance
+double deposit():
+  Return balance
+  Parameters: balance and initial balance
+double [] getStats():
+  Return double [] stats
+void display():
+  Output acount information
