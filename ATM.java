@@ -34,6 +34,7 @@ class Account {
         return accountNum;
     }
     //Gets and checks the amount the user inputs for a transaction
+    //While the input isn't valid, collect a new one.
     double getInputAmount(String action, Scanner input) {
         double amount = 0;
         boolean counter = true;
@@ -53,7 +54,8 @@ class Account {
         }
         return amount;
     }
-    //Updates the transaction list, if maxed deletes the oldest 
+    //Updates the transaction list
+    //When the amount of transactions is over the limit, delete the oldest transaction and add the newest one
     void updateTransactions(String action, String amount) {
         String[] temp = {action, amount};
         for (int i = transactions.length - 1; i > 0; i--) {
@@ -97,6 +99,7 @@ class Account {
         double max = Double.parseDouble(transactions[0][1]);
         double total = 0;
         int count = 0;
+        //If transaction size is smaller than the minimum or larger than the maximum, update the corresponding variable.
         for (String[] transaction : transactions) {
             if (transaction[1] != null) {
                 double amount = Double.parseDouble(transaction[1]);
@@ -116,7 +119,8 @@ class Account {
         System.out.println("Your maximum transaction size of the last five transactions is " + max);
         System.out.println("Your average transaction size is " + average);
     }
-    //Method containing ATM Menu
+    //Processes user's choice of action through a menu
+    //While user has not chosen to exit, run the corresponding method or make them enter a valid input 
     public void processTransactions(Scanner input) {
         String choice = "";
         while (!choice.equals("exit")) {
@@ -184,7 +188,7 @@ public class ATM {
                 accNums.add(accountNum);
                 currentAccount.processTransactions(in);
             }
-            System.out.print("Please enter your full name or 'exit' to exit: ");
+            System.out.print("Please enter your full name or 'exit' to exit: "); 
             name = in.next();
         }
     }
