@@ -149,6 +149,7 @@ public class ATM {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         ArrayList<Account> ACCOUNTS = new ArrayList<>(); //Initializes object list of accounts
+        System.out.println("Welcome to the Open Atm!");
         System.out.println("Please enter your full name or 'exit' to exit."); 
         ArrayList <String> accNums = new ArrayList <>(); //Initializes list of already saved account numbers
         String name = in.next();
